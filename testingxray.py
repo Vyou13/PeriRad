@@ -7,14 +7,14 @@ import pandas as pd
 # --- CONFIGURATION ---
 IMAGE_FOLDER = r"C:\Users\vivia\Downloads\JSRT images with nodules (154 images)\Radiology"  
 CSV_PATH = r"C:\Users\vivia\Downloads\Clinical_Information\Clinical_Information\CLNDAT_EN.txt"         
-OUTPUT_CSV = "nodule_brightness_resultsoutside.csv" 
+OUTPUT_CSV = "nodule_brightness_results15mm.csv" 
 # ---------------------
 # JSRT Standard: Images are 2048x2048 pixels. 
 # Each pixel represents exactly 0.175 mm.
 PIXEL_SPACING_MM = 0.175 
 #10 and 15 mm nodules would be 57 and 86 pixels in diameter
 RADIUS_BUFFER_PX = 10  # Additional pixels to add to the radius for a more inclusive nodule area
-RING_DISTANCE_PX = 57  # Distance in pixels from the inner circle to the outer circle (the ring region)
+RING_DISTANCE_PX = 86  # Distance in pixels from the inner circle to the outer circle (the ring region)
 # ---------------------
 
 # 1. Read the raw text file content
@@ -79,7 +79,7 @@ for record in records:
     # Create an image-sized blank black mask
     mask = np.zeros(img.shape, dtype=np.uint8)
     
-    # Draw the outer circle (inner circle + ring distance)
+    # Draw the outer circle (inner circle + ring distance) in white 
     outer_radius = record['radius_px'] + RING_DISTANCE_PX
     cv2.circle(mask, (record['cx'], record['cy']), outer_radius, 255, -1)
     

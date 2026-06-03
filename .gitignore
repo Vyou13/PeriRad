@@ -1,0 +1,11 @@
+# Results and outputs
+*.csv
+results/
+output/
+images_with_white_circles*/
+circledrawer/
+
+# Python cache
+__pycache__/
+*.pyc
+.venv/

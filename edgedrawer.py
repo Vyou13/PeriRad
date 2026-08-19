@@ -1,3 +1,4 @@
+#draws the circles on the image and shows image with edge detection
 import os
 import re
 import cv2

@@ -1,3 +1,4 @@
+#does edge detection on the image and saves the results to a csv file
 import os
 import re
 import cv2

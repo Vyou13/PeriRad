@@ -1,3 +1,4 @@
+#draws the circles to check if it is the right size for the nodule/if the mask is in the correct spot
 import os
 import re
 import cv2
@@ -6,13 +7,13 @@ import numpy as np
 # --- CONFIGURATION ---
 IMAGE_FOLDER = r"C:\Users\vivia\Downloads\JSRT images with nodules (154 images)\Radiology"  
 TXT_FILE_PATH = r"C:\Users\vivia\Downloads\Clinical_Information\Clinical_Information\CLNDAT_EN.txt"         
-OUTPUT_FOLDER = "images_with_white_circles15mm"   # Folder where circled images will be saved
-IMAGE_NAME = '_circle15mm.png'
+OUTPUT_FOLDER = "results/images_with_white_circles10mm"   # Folder where circled images will be saved
+IMAGE_NAME = '_circle10mm.png'
 # JSRT Standard Specifications
 PIXEL_SPACING_MM = 0.175
 RADIUS_BUFFER_PX = 0  # Additional pixels to add to the radius
 #10 and 15 mm nodules would be 57 and 86 pixels in diameter
-RING_DISTANCE_PX = 86  # Distance in pixels from the inner circle to the outer circle (the ring region)
+RING_DISTANCE_PX = 57  # Distance in pixels from the inner circle to the outer circle (the ring region)
 
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 

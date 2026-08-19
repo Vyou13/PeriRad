@@ -189,7 +189,7 @@ for img_id, info in coordinate_lookup.items():
         # Each column uses a distinct (target, background) pair:
         clutter_node = calculate_mahalanobis_clutter(target_vectors, global_vectors)      # nodule core vs WHOLE IMAGE
         clutter_perinodule = calculate_mahalanobis_clutter(bg_vectors, global_vectors)    # 15mm RING vs WHOLE IMAGE
-        clutter_whole_thing = calculate_mahalanobis_clutter(all_mask_vectors, bg_vectors) # core+ring vs 15mm RING
+        clutter_whole_thing = calculate_mahalanobis_clutter(all_mask_vectors, global_vectors) # core+ring vs WHOLE IMAGE
 
 
         processed_count += 1
